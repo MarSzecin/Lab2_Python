@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 """SAMOUCZEK"""
 """
@@ -79,9 +80,9 @@ print(z)
 # A = np.array([[1, 2, 3], [7, 8, 9]])
 # print(A)
 
-A = np.array([[1, 2, \
-                3],
-              [7, 8, 9]])
+# A = np.array([[1, 2, \
+#                 3],
+#               [7, 8, 9]])
 # print(A)
 
 # v = np.arange(1,7)
@@ -147,13 +148,13 @@ A = np.array([[1, 2, \
 # print(np.size(V))
 # print(np.shape(V))
 
-A = np.array([[1, 0, 0],
-              [2, 3, -1],
-              [0, 7, 2]] )
+# A = np.array([[1, 0, 0],
+#               [2, 3, -1],
+#               [0, 7, 2]] )
 
-B = np.array([[1, 2, 3],
-              [-1, 5, 2],
-              [2, 2, 2]] )
+# B = np.array([[1, 2, 3],
+#               [-1, 5, 2],
+#               [2, 2, 2]] )
 # print( A+B )
 # print( A-B )
 # print( A+2 )
@@ -182,13 +183,32 @@ B = np.array([[1, 2, 3],
 # PT = A**2  
 # print(PT)
 
-# transpozycja
-print(A.T)
-print(A.transpose())
-# hermitowskie sprzezenie macierzy (dla m. zespolonych)
-print(A.conj().T)
-print(A.conj().transpose())
+# # transpozycja
+# print(A.T)
+# print(A.transpose())
+# # hermitowskie sprzezenie macierzy (dla m. zespolonych)
+# print(A.conj().T)
+# print(A.conj().transpose())
 
+
+""" """
+# x=[1,2,3]
+# y=[4,6,5]
+# plt.plot(x,y)
+# plt.show()
+
+x=np.arange(0.0, 2.0, 0.01)
+y1=np.sin(2.0*np.pi*x)
+y2=np.cos(2.0*np.pi*x)
+y=y1*y2
+l1, = plt.plot(x,y,'b:', linewidth = 3)
+l2,l3 = plt.plot(x,y1,'r*',x,y2,'g--',linewidth=3)
+plt.legend((l2,l3,l1),('dane y1','dane y2','y1*y2'))
+plt.xlabel('Czas')
+plt.ylabel('Pozycja')
+plt.title('Wykres')
+plt.grid(True)
+plt.show()
 
 
 

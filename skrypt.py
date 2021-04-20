@@ -270,12 +270,33 @@ print("E:",E,"\n")
 
 
 """ ZAD 6.9 """
+minimum = np.min(C)
+maximum = np.max(C)
+print("Zadanie 6.9")
+for val in range(np.shape(A)[0]):
+    if minimum in A[val,:]:
+        if maximum in A[val,:]:
+            print(A[val,:])
+
+print("\n")
+
+""" ZAD 6.10 """
+print("Zadanie 6.10")
+print("Mnożenie tablicowe: ")
+print(D*E,"\n")
+print("Mnożenie wektorowe: ")
+print(D@E,"\n")
 
 
+""" ZAD 6.11 """
 
+def zadanie11(l):
+    tab = np.random.randint(0,11,[l, l])
+    return tab, np.trace(tab)
 
-print("Zadanie 6.8")
-print("E:",E,"\n")
+print("Zadanie 11")
+a = int(input('Podaj rozmiar macierzy: '))
+print(zadanie11(a))
 
 
 

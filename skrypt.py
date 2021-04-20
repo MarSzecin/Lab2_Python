@@ -110,7 +110,7 @@ print(z)
 # Z = np.eye(2) # np.eye(2,2) np.eye(2,3)
 # Q = np.random.rand(2,5) # np.round(10*np.random.rand((3,3)))
 
-# print(X,"\n\n",Y,"\n\n",Z,"\n\n",Q)
+#print(X,"\n\n",Y,"\n\n",Z,"\n\n",Q)
 # U = np.block([[A], [X]])
 # print(U)
 
@@ -191,24 +191,107 @@ print(z)
 # print(A.conj().transpose())
 
 
-""" """
+
 # x=[1,2,3]
 # y=[4,6,5]
 # plt.plot(x,y)
 # plt.show()
 
-x=np.arange(0.0, 2.0, 0.01)
-y1=np.sin(2.0*np.pi*x)
-y2=np.cos(2.0*np.pi*x)
-y=y1*y2
-l1, = plt.plot(x,y,'b:', linewidth = 3)
-l2,l3 = plt.plot(x,y1,'r*',x,y2,'g--',linewidth=3)
-plt.legend((l2,l3,l1),('dane y1','dane y2','y1*y2'))
-plt.xlabel('Czas')
-plt.ylabel('Pozycja')
-plt.title('Wykres')
-plt.grid(True)
-plt.show()
+# x=np.arange(0.0, 2.0, 0.01)
+# y1=np.sin(2.0*np.pi*x)
+# y2=np.cos(2.0*np.pi*x)
+# y=y1*y2
+# l1, = plt.plot(x,y,'b:', linewidth = 3)
+# l2,l3 = plt.plot(x,y1,'r*',x,y2,'g--',linewidth=3)
+# plt.legend((l2,l3,l1),('dane y1','dane y2','y1*y2'))
+# plt.xlabel('Czas')
+# plt.ylabel('Pozycja')
+# plt.title('Wykres')
+# plt.grid(True)
+# plt.show()
+
+
+""" ZAD 6.3 """
+V1 = np.block([[np.linspace(1,5,5)],[np.linspace(5,1,5)]])
+V2 = np.block([[2 * np.ones((2, 3))],[np.linspace(-90, -70, 3)]])
+V3 = np.block([np.zeros((3, 2)), V2])
+V4 = np.block([[V1],[V3]])
+A = np.block([V4, 10 * np.ones((5,1))])
+
+print("Zadanie 6.3")
+print("A:",A,"\n")
+
+
+
+""" ZAD 6.4 """
+B = A[1,:] + A[3,:]
+print("Zadanie 6.4")
+print("B:",B,"\n")
+
+
+
+""" ZAD 6.5 """
+C = np.array([])
+C = np.append(C, max(A[:,0]))
+C = np.append(C, max(A[:,1]))
+C = np.append(C, max(A[:,2]))
+C = np.append(C, max(A[:,3]))
+C = np.append(C, max(A[:,4]))
+C = np.append(C, max(A[:,5]))
+
+print("Zadanie 6.5")
+print("C:",C,"\n")
+
+
+""" ZAD 6.6 """
+D = np.array([])
+D = np.delete(B, [0,5])
+
+print("Zadanie 6.6")
+print("D:",D,"\n")
+
+
+""" ZAD 6.7 """
+D[D == 4] = 0
+
+print("Zadanie 6.7")
+print("D:",D,"\n")
+
+
+""" ZAD 6.8 """
+E = np.array([])
+minimum = np.min(C)
+maximum = np.max(C)
+E = np.delete(C, np.where(C == minimum))
+E = np.delete(E, np.where(E == maximum))
+
+print("Zadanie 6.8")
+print("E:",E,"\n")
+
+
+""" ZAD 6.9 """
+
+
+
+
+print("Zadanie 6.8")
+print("E:",E,"\n")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

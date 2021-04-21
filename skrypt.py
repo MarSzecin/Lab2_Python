@@ -296,21 +296,56 @@ def zadanie11(l):
 
 print("Zadanie 11")
 a = int(input('Podaj rozmiar macierzy: '))
-print(zadanie11(a))
+print(zadanie11(a),"\n")
+
+
+
+""" ZAD 6.12 """
+
+# def zadanie12(tab):
+#     size = np.shape(tab)
+#     tab = tab * (1 - np.eye(size[0], size[0]))
+#     tab = tab * (1 - np.fliplr(np.eye(size[0], size[0])))
+#     return tab
+
+tab2 = np.array([[1,2,3,13],[4,5,6,14],[7,8,9,15],[10,11,12,16]])
+
+
+# print("Zadanie 6.12")
+# print(zadanie12(tab2),"\n")
 
 
 
 
+""" ZAD 6.13 """
+
+def zadanie13(tab2):
+    suma = 0
+    size = np.shape(tab2)
+    for i in range(size[0]):
+        if i % 2 == 0:
+            suma = suma + np.sum(tab2[i, :])
+    return suma
 
 
 
+print("Zadanie 6.13")
+print(zadanie13(tab2),"\n")
 
 
 
+""" ZAD 6.14 """
+
+x = np.linspace(-10, 10, 201)
+y = lambda x: np.cos(2 * x)
+plt.plot(x, y(x), 'g--')
+plt.show()
+
+print("Zadanie 6.14\nWykres w zakładce Plots\n")
 
 
 
-
+""" ZAD 6.15 """
 
 
 

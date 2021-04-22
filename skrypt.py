@@ -1,5 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from zadanie15 import zadanie15
+from scipy import integrate
 
 """SAMOUCZEK"""
 """
@@ -302,29 +304,28 @@ print(zadanie11(a),"\n")
 
 """ ZAD 6.12 """
 
-# def zadanie12(tab):
-#     size = np.shape(tab)
-#     tab = tab * (1 - np.eye(size[0], size[0]))
-#     tab = tab * (1 - np.fliplr(np.eye(size[0], size[0])))
-#     return tab
+def zadanie12(tab):
+    np.fill_diagonal(tab, 0)
+    np.fill_diagonal(np.fliplr(tab),0)
+    return tab
 
 tab2 = np.array([[1,2,3,13],[4,5,6,14],[7,8,9,15],[10,11,12,16]])
 
 
-# print("Zadanie 6.12")
-# print(zadanie12(tab2),"\n")
+print("Zadanie 6.12")
+print(zadanie12(tab2),"\n")
 
 
 
 
 """ ZAD 6.13 """
 
-def zadanie13(tab2):
+def zadanie13(tab):
     suma = 0
-    size = np.shape(tab2)
+    size = np.shape(tab)
     for i in range(size[0]):
         if i % 2 == 0:
-            suma = suma + np.sum(tab2[i, :])
+            suma = suma + np.sum(tab[i, :])
     return suma
 
 
@@ -347,14 +348,41 @@ print("Zadanie 6.14\nWykres w zakładce Plots\n")
 
 """ ZAD 6.15 """
 
+x = np.linspace(-10, 10, 201)
+tab5 = np.zeros([len(x)])
+
+for i in range(len(x)):
+    tab5[i] = zadanie15(x[i])
+
+print("Zadanie 6.15\nWykres w zakładce Plots\n")
+plt.plot(x,tab5,'g+',x,y(x),'r--')
 
 
 
+""" ZAD 6.17 """
+
+y3=3*(y(x)) + tab5
+print("Zadanie 6.17\nWykres w zakładce Plots\n")
+plt.plot(x,y3,'b*',x,tab5,'g+',x,y(x),'r--')
+
+""" ZAD 6.18 """
+
+tab6 = np.array([[10,5,1,7],[10,9,5,5],[1,6,7,3],[10,0,1,5]])
+tab7 = np.array([[34],[44],[25],[27]])
+
+x= np.linalg.inv(tab6) @ tab7
+print("Zadanie 6.18")
+print(x,"\n")
+print("BABA","\n")
 
 
+""" ZAD 6.19 """
+x = np.linspace(0,2*np.pi,1000000)
+y = lambda x:np.sin(x)
 
-
-
+calka = integrate.quad(y, 0, 2*np.pi)[0]
+print("Zadanie 6.19")
+print(calka,"\n")
 
 
     
